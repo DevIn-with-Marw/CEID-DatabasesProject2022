@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="AdminUI_MEmp_Base" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="500.0" styleClass="bodybg" stylesheets="@stylesheets/EmployeeEditTheme.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projectdb.AdminDemoteToEmployeeController">
+   <children>
+      <Label fx:id="AdminUI_MEmp_IndicationLabel" alignment="TOP_LEFT" prefHeight="37.0" prefWidth="500.0" text="Please insert Employee's phone number (phone number can be empty):" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="AdminUI_MEmp_PhoneField" layoutX="155.0" layoutY="90.0" promptText="Phone Number..." AnchorPane.bottomAnchor="125.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="90.0">
+         <font>
+            <Font name="System Italic" size="16.0" />
+         </font>
+      </TextField>
+      <Button fx:id="AdminUI_Memp_CancelButton" layoutX="250.0" layoutY="189.0" mnemonicParsing="false" onAction="#cancel" prefHeight="38.0" prefWidth="99.0" text="CANCEL" textFill="WHITE" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="151.0" AnchorPane.topAnchor="189.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="AdminUI_MEmp_NextButton" layoutX="370.0" layoutY="189.0" mnemonicParsing="false" onAction="#proceed" prefHeight="38.0" prefWidth="99.0" text="NEXT" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

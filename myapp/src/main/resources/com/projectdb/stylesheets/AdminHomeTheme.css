@@ -1,0 +1,221 @@
+/*	Background	*/
+
+.bodybg {
+    -fx-background-image:url("../backgrounds/em1.png");
+    -fx-background-size: 100% 100%;
+}
+
+/*	Scroll Panes*/
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
+}
+
+.scroll-pane {
+  -fx-background-color: transparent;
+}
+.scroll-pane .corner{
+  -fx-background-color: transparent;
+}
+.scroll-bar .increment-button {
+
+}
+
+.scroll-bar .decrement-button {
+
+}
+
+.scroll-bar:horizontal,
+.scroll-bar:vertical {
+  -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal .track-background,
+.scroll-bar:vertical .track-background {
+  visibility: hidden;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track {
+  visibility: hidden;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color :derive(grey,10.0%);
+    -fx-background-insets : 2.0, 0.0, 0.0;
+    -fx-background-radius : 2.0em;
+}
+
+.scroll-bar:horizontal .thumb:hover,
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color :derive(#ba1a2a,10.0%);
+    -fx-background-insets : 2.0, 0.0, 0.0;
+    -fx-background-radius : 2.0em;
+}
+
+.scroll-pane {
+    -fx-base: transparent;
+    -fx-background-color: transparent;
+}
+
+
+
+/*	Tables	*/
+
+.table-view {
+    -fx-base: transparent;
+    -fx-control-inner-background: transparent;
+    -fx-background-color: transparent;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 5;
+}
+
+.table-view .scroll-bar * {
+    -fx-min-width: 0;
+    -fx-pref-width: 0;
+    -fx-max-width: 0;
+
+    -fx-min-height: 0;
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+}
+
+.table-view .filler {
+    -fx-size: 14;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent transparent transparent;
+    -fx-border-insets: 0 3 1 0;
+}
+
+.table-view .column-header .filler,
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: transparent;
+}
+
+.table-view .column-header {
+	-fx-background-color: transparent;
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: white;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-alignment: center;
+    -fx-font-size: 10pt;
+    -fx-padding: 2 0 5 0;
+    -fx-text-fill: white;
+}
+
+.table-row-cell,
+.table-row-cell:odd {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: derive(#BA1A29,90%);
+}
+
+.table-view .table-row-cell:filled:selected {
+    -fx-background-color: derive(#BA1A29,50%);
+}
+
+.table-view .table-cell {
+    -fx-alignment: center;
+    -fx-border-color: black;
+    -fx-border-width: 0 0 0 0;
+    -fx-font-size: 10pt;
+    -fx-padding: 2 1 4 1;
+}
+
+/*	Tab	*/
+.tab {
+    -fx-alignment: center;
+    -fx-border-width: 1 0 1 0;
+    -fx-border-color: white;
+   	-fx-background-color: transparent;
+	-fx-pref-height: 40;
+	-fx-pref-width: 330;
+}
+
+
+.tab-label {
+    -fx-font-size: 12pt;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/*	tabPane	*/
+.tab-pane {
+	-fx-background-color: transparent;
+}
+.tab-header-background {
+    -fx-background-color: transparent;
+}
+
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {-fx-border-color: #BA1A29}
+
+
+/*	Toolbar	*/
+.tool-bar {
+	-fx-background-color: transparent;
+}
+
+ 
+/*	TextField	*/
+.text-field {
+	/*
+	-fx-font-family: "";
+	-fx-font-size: 18;
+	-fx-border-color: transparent;
+	*/
+	-fx-border-color: white;
+	-fx-text-fill: white;
+	-fx-border-width: 0 0 0.5 0; // top, right, bottom, left
+	-fx-border-radius: 0;
+	-fx-background-color: transparent;
+}
+
+.text-field:focused {
+  -fx-border-width: 0 0 0.5 0; // top, right, bottom, left
+}
+
+/*	TextArea	*/
+.text-area {
+	-fx-border-color: white;
+	-fx-text-fill: blue;
+	-fx-border-width: 0 0 0 0; 
+	-fx-background-color: transparent;
+}
+.text-area .content {
+ -fx-background-color: transparent;
+}
+
+/*	Button	*/
+.button {
+    -fx-padding: 5 22 5 22; // top, right, bottom, left
+    -fx-border-color: white;
+    -fx-border-width: 0.5;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+}
+
+.button:hover {
+    -fx-background-color: transparent;
+    -fx-border-width: 1;
+}
+
+.button:pressed, .button:default:hover:pressed {
+  -fx-background-color: white;
+  -fx-text-fill: white;
+}
+

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="500.0" styleClass="bodybg" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projectdb.EmployeeEditCatController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="150.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="50.0" layoutY="43.0" prefHeight="51.0" prefWidth="393.0" text="EDIT MODE:" textFill="#d40000" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                     <font>
+                        <Font name="Noto Sans Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="50.0" layoutY="82.0" prefHeight="51.0" prefWidth="200.0" text="↳ Category ID :" textFill="WHITE" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="250.0">
+                     <font>
+                        <Font name="Noto Sans Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="IDLabel" layoutX="229.0" layoutY="82.0" prefHeight="51.0" prefWidth="150.0" textFill="WHITE" AnchorPane.leftAnchor="229.0" AnchorPane.rightAnchor="123.0" AnchorPane.topAnchor="82.0">
+                     <font>
+                        <Font name="Noto Sans Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Line endX="450.0" endY="120.0" layoutX="1.0" layoutY="14.0" startX="50.0" startY="120.0" stroke="WHITE" strokeWidth="2.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="133.0" />
+                  <Button fx:id="CancelButton1" contentDisplay="GRAPHIC_ONLY" layoutX="417.0" mnemonicParsing="false" onAction="#CancelButtonOnAction" prefHeight="50.0" prefWidth="85.0" stylesheets="@../Documents/stylesheets/ImageButton.css" text="Back">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="39.0">
+                           <image>
+                              <Image url="@icons/Wundo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane prefHeight="590.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="CancelButton" contentDisplay="GRAPHIC_ONLY" layoutX="70.0" layoutY="340.0" mnemonicParsing="false" onAction="#CancelButtonOnAction" prefHeight="60.0" prefWidth="180.0" stylesheets="@../Documents/stylesheets/ImageButton.css" text="Cancel &amp; Exit" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="0.0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@icons/RleftArrow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Label alignment="CENTER" layoutX="26.0" layoutY="14.0" prefHeight="51.0" prefWidth="200.0" text="Current Record:" textFill="WHITE" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="10.0">
+                     <font>
+                        <Font name="Noto Sans Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="LeftLabel1" alignment="CENTER" layoutX="45.0" layoutY="100.0" prefHeight="25.0" prefWidth="165.0" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="100.0">
+                     <font>
+                        <Font name="Noto Sans Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="LeftLabel2" alignment="CENTER" layoutX="45.0" layoutY="130.0" prefHeight="25.0" prefWidth="165.0" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="130.0">
+                     <font>
+                        <Font name="Noto Sans Regular" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </left>
+         <right>
+            <AnchorPane prefHeight="590.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="SubmitButton" contentDisplay="GRAPHIC_ONLY" layoutY="340.0" mnemonicParsing="false" onAction="#SubmitButtonOnACtion" prefHeight="60.0" prefWidth="180.0" stylesheets="@../Documents/stylesheets/ImageButton.css" text="Submit Change" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="70.0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@icons/RrightArrow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Label alignment="CENTER" layoutX="25.0" layoutY="14.0" prefHeight="51.0" prefWidth="200.0" text="Edit New Values:" textFill="WHITE" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="10.0">
+                     <font>
+                        <Font name="Noto Sans Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="RightTextField1" layoutX="45.0" layoutY="100.0" promptText="Category ID" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="100.0" />
+                  <TextField fx:id="RightTextField2" layoutX="45.0" layoutY="130.0" promptText="Category Name" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="130.0" />
+                  <Label fx:id="ErrorLabel" layoutX="25.0" layoutY="378.0" prefHeight="40.0" prefWidth="220.0" textFill="#eb2d2d" wrapText="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="5.0">
+                     <font>
+                        <Font name="Noto Sans Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </right>
+      </BorderPane>
+   </children>
+   <stylesheets>
+      <URL value="@stylesheets/EmployeeEditTheme.css" />
+      <URL value="@stylesheets/ImageButton.css" />
+   </stylesheets>
+</AnchorPane>

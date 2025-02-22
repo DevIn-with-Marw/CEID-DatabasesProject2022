@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="CustomerUIBase" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1280.0" styleClass="bodybackground" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projectdb.CustomerHomeController">
+   <children>
+      <BorderPane fx:id="CustomerUIAppPane" prefHeight="760.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane fx:id="CustomerUI_welcome_pane" maxHeight="-Infinity" minHeight="120.0" prefHeight="120.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="CustomerUIAppLogo" fitHeight="129.0" fitWidth="422.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.35709228515622726" AnchorPane.rightAnchor="902.0429077148438" AnchorPane.topAnchor="0.0">
+                     <image>
+                        <Image url="@icons/Applogo.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="CustomerUI_avatar_image" fitHeight="62.0" fitWidth="68.0" layoutX="1181.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="1181.0" AnchorPane.rightAnchor="37.0" AnchorPane.topAnchor="26.0">
+                     <image>
+                        <Image url="@icons/download-icon-avatar+person+profile+user+icon-1320086059654790795_256.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="CustomerUI_hellouser_label" alignment="CENTER_RIGHT" layoutX="689.0" layoutY="29.0" prefHeight="24.0" prefWidth="476.0" text="Hello &lt;username&gt;!" textFill="WHITE" AnchorPane.bottomAnchor="67.0" AnchorPane.leftAnchor="685.0" AnchorPane.rightAnchor="119.0" AnchorPane.topAnchor="29.0">
+                     <font>
+                        <Font name="Leelawadee Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="CustomerUI_Profile_Button" graphicTextGap="8.0" layoutX="991.0" layoutY="54.0" mnemonicParsing="false" onAction="#editProfile" prefHeight="38.0" prefWidth="181.0" style="-fx-background-color: transparent;" stylesheets="@stylesheets/ImageButton.css" text="Profile Settings" textFill="WHITE" underline="true" AnchorPane.bottomAnchor="26.799999999999997" AnchorPane.leftAnchor="991.0" AnchorPane.rightAnchor="108.0" AnchorPane.topAnchor="54.0">
+                     <graphic>
+                        <ImageView cache="true" cacheHint="QUALITY" fitHeight="26.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/pro_file_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="HoloLens MDL2 Assets" size="18.0" />
+                     </font>
+                     <effect>
+                        <Bloom threshold="0.5" />
+                     </effect>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane fx:id="CustomerUI_ButtonGroup1_Pane" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="554.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="CustomerUI_MMS_Button" layoutX="8.0" layoutY="60.0" mnemonicParsing="false" onAction="#showMMS" prefHeight="74.0" prefWidth="246.0" stylesheets="@stylesheets/ImageButton.css" text="My Movies / Series" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="508.80000000000007" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                     <graphic>
+                        <ImageView cache="true" cacheHint="QUALITY" fitHeight="69.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/4964024_film_media_ondemand_play_player_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="HoloLens MDL2 Assets" size="22.0" />
+                     </font>
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Button>
+                  <Button fx:id="CustomerUI_Library_Button" graphicTextGap="8.0" layoutX="1.0" layoutY="166.0" mnemonicParsing="false" onAction="#showLibrary" prefHeight="74.0" prefWidth="246.0" stylesheets="@stylesheets/ImageButton.css" text="Browse Library" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="402.80000000000007" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="165.99999999999997">
+                     <graphic>
+                        <ImageView cache="true" cacheHint="QUALITY" fitHeight="55.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/2849790_bookmark_book_multimedia_tab_media_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="HoloLens MDL2 Assets" size="22.0" />
+                     </font>
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Button>
+                  <Button fx:id="CustomerUI_Rental_Button" graphicTextGap="8.0" layoutX="2.0" layoutY="267.0" mnemonicParsing="false" onAction="#showCurrentRental" prefHeight="74.0" prefWidth="246.0" stylesheets="@stylesheets/ImageButton.css" text="Current Rental" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="301.80000000000007" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="267.0">
+                     <graphic>
+                        <ImageView cache="true" cacheHint="QUALITY" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/6611338_and_cinema_corn_entertainment_movies_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="HoloLens MDL2 Assets" size="22.0" />
+                     </font>
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Button>
+                  <Button fx:id="CustomerUI_LogoutButton" alignment="TOP_LEFT" graphicTextGap="8.0" layoutX="14.0" layoutY="440.0" mnemonicParsing="false" onAction="#logout" prefHeight="74.0" prefWidth="228.0" stylesheets="@stylesheets/ImageButton.css" text="Logout" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="128.80000000000004" AnchorPane.rightAnchor="8.400000000000006" AnchorPane.topAnchor="440.0">
+                     <graphic>
+                        <ImageView cache="true" cacheHint="QUALITY" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/7787553_sleep_bed_bedroom_furniture_chair_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="HoloLens MDL2 Assets" size="22.0" />
+                     </font>
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Button>
+                  <Button fx:id="CustomerUI_ExitButton" alignment="TOP_LEFT" graphicTextGap="8.0" layoutX="17.0" layoutY="523.0" mnemonicParsing="false" onAction="#exit" prefHeight="74.0" prefWidth="224.0" stylesheets="@stylesheets/ImageButton.css" text="Exit" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="45.80000000000004" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="9.400000000000006" AnchorPane.topAnchor="523.0">
+                     <graphic>
+                        <ImageView cache="true" cacheHint="QUALITY" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/9104188_turn%20off_turn%20on_power_off_on_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="HoloLens MDL2 Assets" size="22.0" />
+                     </font>
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Button>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane fx:id="CustomerUI_views_Pane" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="631.0" prefWidth="1030.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="CustomerUI_CurrRental_Pane" layoutY="1.0" prefHeight="640.0" prefWidth="1029.6" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000066" height="545.0" layoutX="7.0" layoutY="37.0" stroke="BLACK" strokeType="INSIDE" width="697.0" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="326.0" AnchorPane.topAnchor="37.0" />
+                        <TableView fx:id="CustomerUI_CurrRental_Checkout_Table" layoutX="5.0" layoutY="39.0" prefHeight="544.0" prefWidth="700.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="325.0" AnchorPane.topAnchor="39.0">
+                          <columns>
+                            <TableColumn fx:id="CustomerUI_CurreRental_Checkout_TypeCol" prefWidth="200.0" text="TYPE" />
+                            <TableColumn fx:id="CustomerUI_CurrRental_Checkout_TitleCol" minWidth="0.0" prefWidth="350.0" text="TITLE" />
+                              <TableColumn fx:id="CustomerUI_CurrRental_Checkout_PriceCol" prefWidth="128.0" text="PRICE" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="customerUI_CurrRental_showInfoButton" graphicTextGap="8.0" layoutX="763.0" layoutY="46.0" mnemonicParsing="false" onAction="#showinfo" prefHeight="74.0" prefWidth="206.0" style="-fx-border-color: #ba1a2a;" text="SHOW INFO" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="524.0" AnchorPane.leftAnchor="763.0" AnchorPane.rightAnchor="61.0" AnchorPane.topAnchor="46.0">
+                           <font>
+                              <Font name="Eras Bold ITC" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="CustomerUI_CurrRental_RemoveItemButton" graphicTextGap="8.0" layoutX="754.0" layoutY="153.0" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#removeCheckoutItem" prefHeight="86.0" prefWidth="207.0" style="-fx-border-color: #ba1a2a;" text="REMOVE ITEM" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="417.0" AnchorPane.leftAnchor="763.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="153.0">
+                           <font>
+                              <Font name="Eras Bold ITC" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="CustomerUI_CurrRental_CheckoutButton" graphicTextGap="8.0" layoutX="763.0" layoutY="501.0" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#checkout" prefHeight="79.0" prefWidth="206.0" style="-fx-border-color: #ba1a2a;" text="CHECKOUT" textFill="WHITE" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="763.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="501.0">
+                           <font>
+                              <Font name="Eras Bold ITC" size="20.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@icons/RrightArrow.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label fx:id="CustomerUI_CurrRental_Info_CustTypeLabel" layoutX="785.0" layoutY="267.0" prefHeight="47.0" prefWidth="167.0" style="-fx-alignment: center;" text="Customer Type" textFill="WHITE" underline="true" wrapText="true" AnchorPane.leftAnchor="785.0" AnchorPane.rightAnchor="77.39999999999986" AnchorPane.topAnchor="267.0">
+                           <font>
+                              <Font name="Eras Demi ITC" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="CustomerUI_CurrRental_Info_CustTypeValue_Label" layoutX="756.0" layoutY="308.0" prefHeight="47.0" prefWidth="234.0" style="-fx-alignment: CENTER;" text="-" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font name="Eras Bold ITC" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="CustomerUI_CurrRental_Info_PriceLabel" layoutX="787.0" layoutY="365.0" prefHeight="47.0" prefWidth="163.0" style="-fx-alignment: center;" text="Price Total" textAlignment="JUSTIFY" textFill="WHITE" underline="true" wrapText="true" AnchorPane.leftAnchor="787.0">
+                           <font>
+                              <Font name="Eras Demi ITC" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="CustomerUI_CurrRental_Info_PriceValue_Label" layoutX="757.0" layoutY="404.0" prefHeight="47.0" prefWidth="234.0" style="-fx-alignment: CENTER;" text="-- €" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font name="Eras Bold ITC" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="CustomerUI_CurrRental_Info_DiscountLabel" layoutX="789.0" layoutY="440.0" prefHeight="40.0" prefWidth="174.0" text="DISCOUNT GRANTED!" textAlignment="JUSTIFY" textFill="WHITE" AnchorPane.bottomAnchor="162.0" AnchorPane.leftAnchor="789.0" AnchorPane.rightAnchor="67.0" AnchorPane.topAnchor="440.0">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="customerUI_Info_ErrorReportLabel" prefHeight="40.0" prefWidth="705.0" textAlignment="JUSTIFY" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="CustomerUI_MMS_Pane" prefHeight="640.0" prefWidth="1029.6" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000066" height="475.0" layoutY="32.0" stroke="BLACK" strokeType="INSIDE" width="986.0" />
+                        <TabPane fx:id="CustomerUI_MMS_TabPane" layoutY="29.0" prefHeight="477.0" prefWidth="986.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="137.0" AnchorPane.topAnchor="29.0">
+                          <tabs>
+                            <Tab fx:id="CustomerUI_MMS_MoviesTab" text="Movies">
+                              <content>
+                                <AnchorPane fx:id="CustomerUI_MMS_MovieRentals_Pane" maxHeight="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="435.0" prefWidth="938.0">
+                                       <children>
+                                          <ScrollPane fx:id="CustomerUI_MMS_Movierentals_ScrollPane" hbarPolicy="NEVER" prefHeight="438.0" prefWidth="954.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <content>
+                                                <TableView fx:id="CustomerUI_MMS_MovieRentalsTable" prefHeight="480.0" prefWidth="974.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="CustomerUI_MMS_MovieRentals_PriceCol" prefWidth="170.0" text="PRICE" />
+                                                      <TableColumn fx:id="CustomerUI_MMS_MovieRentals_RentalDateCol" prefWidth="240.0" text="RENTAL DATE" />
+                                                      <TableColumn fx:id="CustomerUI_MMS_MovieRentals_MovieTitleCol" editable="false" prefWidth="380.0" text="TITLE" />
+                                                      <TableColumn fx:id="CustomerUI_MMS_MovieRentals_MovieLengthCol" editable="false" prefWidth="170.0" text="DURATION" />
+                                                   </columns>
+                                                </TableView>
+                                             </content>
+                                          </ScrollPane>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab fx:id="CustomerUI_MMS_EpisodesTab" text="Episodes">
+                              <content>
+                                <AnchorPane fx:id="CustomerUI_MMS_EpisodeRentals_Pane" maxHeight="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="445.0" prefWidth="954.0">
+                                       <children>
+                                          <ScrollPane fx:id="CustomerUI_MMS_EpisodeRentals_ScrollPane" prefHeight="447.0" prefWidth="954.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <content>
+                                                <TableView fx:id="CustomerUI_MMS_EpisodeRentals_Table" prefHeight="475.0" prefWidth="1202.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="CustomerUI_MMS_EpisodeRentals_PriceCol" prefWidth="100.0" text="PRICE" />
+                                                      <TableColumn fx:id="CustomerUI_MMS_EpisodeRentals_RentaldateCol" prefWidth="200.0" text="RENTAL DATE" />
+                                                      <TableColumn fx:id="CustomerUI_MMS_EpisodeRentals_EpisodeTitleCol" prefWidth="300.0" text="TITLE" />
+                                                      <TableColumn fx:id="CustomerUI_MMS_EpisodeRentals_EpisodeNumCol" prefWidth="100.0" text="EPISODE NUM" />
+                                                      <TableColumn fx:id="CustomerUI_MMS_EpisodeRentals_EpisodeLengthCol" prefWidth="100.0" text="DURATION" />
+                                                      <TableColumn fx:id="CustomerUI_MMS_EpisodeRentals_SeasonNumCol" prefWidth="100.0" text="SEASON NUM" />
+                                                      <TableColumn fx:id="CustomerUI_MMS_EpisodeRentals_SeriesTitleCol" prefWidth="300.0" text="SERIES TITLE" />
+                                                   </columns>
+                                                </TableView>
+                                             </content>
+                                          </ScrollPane>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                        <Button fx:id="CustomerUI_MMS_getinfoButton" layoutY="525.0" mnemonicParsing="false" onAction="#showinfo" prefHeight="51.0" prefWidth="117.0" style="-fx-border-color: #ba1a2a;" text="show info" textFill="WHITE" AnchorPane.bottomAnchor="47.799999999999955" AnchorPane.leftAnchor="63.0" AnchorPane.rightAnchor="786.5999999999999" AnchorPane.topAnchor="521.0">
+                           <font>
+                              <Font name="Eras Bold ITC" size="26.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="CustomerUI_Library_Episodes_Pane" layoutY="1.0" prefHeight="640.0" prefWidth="1029.6" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000066" height="480.0" layoutY="26.0" stroke="BLACK" strokeType="INSIDE" width="985.0" />
+                        <ScrollPane hbarPolicy="NEVER" layoutY="30.0" prefHeight="473.0" prefWidth="986.0">
+                           <content>
+                              <TableView fx:id="CustomerUI_Library_Episodes_Table" prefHeight="510.0" prefWidth="971.0">
+                                 <columns>
+                                    <TableColumn fx:id="CustomerUI_Library_Episode_EpNoCol" prefWidth="190.0" text="EPISODE NO" />
+                                    <TableColumn fx:id="CustomerUI_Library_Episode_EpTitleCol" prefWidth="400.0" text="TITLE" />
+                                    <TableColumn fx:id="CustomerUI_Library_Episode_EpLengthCol" prefWidth="190.0" text="DURATION" />
+                                    <TableColumn fx:id="CustomerUI_Library_Episode_EpRatingCol" prefWidth="190.0" text="RATING" />
+                                 </columns>
+                              </TableView>
+                           </content>
+                        </ScrollPane>
+                        <Button fx:id="CustomerUI_Library_Episodes_Back_Button" graphicTextGap="8.0" layoutY="525.0" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#viewSeasons" prefHeight="71.0" prefWidth="180.0" style="-fx-border-color: ba1a2a;" text="BACK" textFill="WHITE" AnchorPane.bottomAnchor="47.799999999999955" AnchorPane.leftAnchor="63.0" AnchorPane.rightAnchor="786.5999999999999" AnchorPane.topAnchor="521.0">
+                           <font>
+                              <Font name="Eras Bold ITC" size="26.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="42.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@icons/RleftArrow.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="CustomerUI_Library_Episodes_Rent_Button" graphicTextGap="8.0" layoutX="746.5999999999999" layoutY="521.0" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#rent" prefHeight="71.0" prefWidth="180.0" style="-fx-border-color: ba1a2a;" text="RENT" textFill="WHITE" AnchorPane.bottomAnchor="47.799999999999955" AnchorPane.leftAnchor="746.5999999999999" AnchorPane.rightAnchor="103.0" AnchorPane.topAnchor="521.0">
+                           <font>
+                              <Font name="Eras Bold ITC" size="26.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="CustomerUI_CurrRental_InvalidSub_Label" layoutX="287.0" layoutY="520.0" prefHeight="97.0" prefWidth="422.0" text="It seems like you cannot rent this product (Invalid subscription). Please update your subscription.  " textAlignment="JUSTIFY" textFill="#8e8a8a" visible="false" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="CustomerUI_Library_Seasons_Pane" prefHeight="640.0" prefWidth="1029.6" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000066" height="474.0" layoutY="30.0" stroke="BLACK" strokeType="INSIDE" width="990.0" />
+                        <Button fx:id="CustomerUI_Library_Seasons_ViewEpisodes_Button" graphicTextGap="8.0" layoutX="759.5999999999999" layoutY="525.0" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#viewEpisodes" prefHeight="71.0" prefWidth="180.0" style="-fx-border-color: ba1a2a;" text=" EPISODES" textFill="WHITE" AnchorPane.bottomAnchor="47.799999999999955" AnchorPane.leftAnchor="746.5999999999999" AnchorPane.rightAnchor="103.0" AnchorPane.topAnchor="521.0">
+                           <font>
+                              <Font name="Eras Bold ITC" size="26.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="CustomerUI_Library_Seasons_Back_Button" graphicTextGap="8.0" layoutX="63.0" layoutY="521.0" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#back2series" prefHeight="71.0" prefWidth="180.0" style="-fx-border-color: ba1a2a;" text="BACK" textFill="WHITE" AnchorPane.bottomAnchor="47.799999999999955" AnchorPane.leftAnchor="63.0" AnchorPane.rightAnchor="786.5999999999999" AnchorPane.topAnchor="521.0">
+                           <font>
+                              <Font name="Eras Bold ITC" size="26.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="42.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@icons/RleftArrow.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <ScrollPane hbarPolicy="NEVER" layoutY="29.0" prefHeight="474.0" prefWidth="988.0" AnchorPane.bottomAnchor="139.80000000000007" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="41.59999999999991" AnchorPane.topAnchor="29.0">
+                           <content>
+                              <TableView fx:id="CustomerUI_Library_Seasons_Table" prefHeight="502.0" prefWidth="975.0">
+                                <columns>
+                                    <TableColumn fx:id="CustomerUI_Library_Season_SeasNoCol" editable="false" prefWidth="220.0" text="SEASON NO" />
+                                    <TableColumn fx:id="CustomerUI_Library_Season_SeasEpNumCol" editable="false" prefWidth="220.0" text="#of EPISODES" />
+                                    <TableColumn fx:id="CustomerUI_Library_Season_SeasRelYearCol" editable="false" prefWidth="220.0" text="RELEASE YEAR" />
+                                    <TableColumn fx:id="CustomerUI_Library_Season_ActorsCol" prefWidth="300.0" text="STARRING" />
+                                </columns>
+                              </TableView>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="CustomerUI_Library_Pane" prefHeight="640.0" prefWidth="1029.6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000066" height="447.0" layoutY="32.0" stroke="BLACK" strokeType="INSIDE" width="995.0" AnchorPane.bottomAnchor="163.39999999999998" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="35.40000000000009" AnchorPane.topAnchor="32.0" />
+                        <TabPane fx:id="CustomerUI_Library_TabPane" focusTraversable="false" layoutY="29.0" maxWidth="-Infinity" prefHeight="475.0" prefWidth="989.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="29.0">
+                           <tabs>
+                              <Tab fx:id="CustomerUI_Library_MoviesTab" text="Movies">
+                                 <content>
+                                    <AnchorPane fx:id="CustomerUI_Library_MoviesPane" minHeight="0.0" minWidth="0.0" prefHeight="490.0" prefWidth="989.0">
+                                       <children>
+                                          <ScrollPane fx:id="CustomerUI_Library_Movies_ScrollPane" prefHeight="424.0" prefWidth="989.0" AnchorPane.bottomAnchor="112.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <content>
+                                                <TableView fx:id="CustomerUI_Library_MoviesTable" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="550.0" prefWidth="1650.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="CustomerUI_Library_Movies_TitleCol" editable="false" prefWidth="150.0" text="TITLE" />
+                                                      <TableColumn fx:id="CustomerUI_Library_Movies_FDescCol" editable="false" prefWidth="300.0" text="DESCRIPTION" />
+                                                      <TableColumn fx:id="CustomerUI_Library_Movies_RelYearCol" editable="false" prefWidth="100.0" text="RELEASE YEAR" />
+                                                      <TableColumn fx:id="CustomerUI_Library_Movies_LangCol" editable="false" prefWidth="90.0" text="LANGUAGE" />
+                                                      <TableColumn fx:id="CustomerUI_Library_Movies_OrigLangCol" editable="false" prefWidth="150.0" text="ORIGINAL LANGUAGE" />
+                                                      <TableColumn fx:id="CustomerUI_Library_Movies_FlengthCol" editable="false" prefWidth="90.0" text="DURATION" />
+                                                      <TableColumn fx:id="CustomerUI_Library_Movies_RatingCol" editable="false" prefWidth="90.0" text="RATING" />
+                                                      <TableColumn fx:id="CustomerUI_Library_Movies_SpFeatCol" editable="false" prefWidth="250.0" text="SPECIAL FEATURES" />
+                                                      <TableColumn fx:id="CustomerUI_Library_Movies_CategoryCol" prefWidth="120.0" text="CATEGORY" />
+                                                      <TableColumn fx:id="CustomerUI_Library_Movies_ActorsCol" prefWidth="280.0" text="STARRING" />
+                                                   </columns>
+                                                </TableView>
+                                             </content>
+                                          </ScrollPane>
+                                          <Button fx:id="CustomerUI_Library_Movies_RentButton" alignment="CENTER" layoutX="747.0" layoutY="453.0" mnemonicParsing="false" onAction="#rent" prefHeight="73.0" prefWidth="179.0" style="-fx-border-color: #ba1a2a;" text="RENT" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="747.0" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="453.0">
+                                             <font>
+                                                <Font name="Eras Bold ITC" size="26.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="CustomerUI_Library_SeriesTab" text="Series">
+                                 <content>
+                                    <AnchorPane fx:id="CustomerUI_Library_SeriesPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ScrollPane fx:id="customerUI_Library_SerieScrollPane" prefHeight="381.0" prefWidth="989.0" AnchorPane.bottomAnchor="112.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <content>
+                                                <TableView fx:id="CustomerUI_Library_SeriesTable" prefHeight="580.0" prefWidth="1180.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="CustomerUI_Library_Series_TitleCol" prefWidth="250.0" text="TITLE" />
+                                                      <TableColumn fx:id="CustomerUI_Library_Series_DescCol" prefWidth="300.0" text="DESCRIPTION" />
+                                                      <TableColumn fx:id="CustomerUI_Library_Series_RelYEarCol" minWidth="0.0" prefWidth="100.0" text="RELEASE YEAR" />
+                                                      <TableColumn fx:id="CustomerUI_Library_Series_LangCol" prefWidth="90.0" text="LANGUAGE " />
+                                                      <TableColumn fx:id="CustomerUI_Library_Series_OrigLangCol" prefWidth="150.0" text="ORIGINAL LANGUAGE" />
+                                                      <TableColumn fx:id="CustomerUI_Library_Series_RatingCol" prefWidth="90.0" text="RATING" />
+                                                      <TableColumn fx:id="CustomerUI_Library_Series_CategoryCol" prefWidth="150.0" text="CATEGORY" />
+                                                   </columns>
+                                                </TableView>
+                                             </content>
+                                          </ScrollPane>
+                                          <Button fx:id="CustomerUI_Library_Series_ViewSeasons_Button" alignment="CENTER" contentDisplay="RIGHT" graphicTextGap="8.0" layoutX="627.0" layoutY="445.0" mnemonicParsing="false" onAction="#viewSeasons" prefHeight="70.0" prefWidth="299.0" style="-fx-border-color: ba1a2a;" text="VIEW SEASONS" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="627.0" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="445.0">
+                                             <font>
+                                                <Font name="Eras Bold ITC" size="26.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="38.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@icons/RrightArrow.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+   <stylesheets>
+      <URL value="@stylesheets/CustomerHomeTheme.css" />
+      <URL value="@stylesheets/DefaultButton.css" />
+   </stylesheets>
+</AnchorPane>

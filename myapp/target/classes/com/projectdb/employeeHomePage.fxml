@@ -1,0 +1,1006 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="760.0" prefWidth="1360.0" styleClass="bodybg" stylesheets="@stylesheets/EmployeeTheme.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projectdb.EmployeeController">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1340.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <TabPane prefHeight="740.0" prefWidth="1190.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab text="Customers">
+                  <content>
+                    <AnchorPane prefHeight="707.0" prefWidth="1190.0">
+                           <children>
+                              <TableView fx:id="CustomersTable" onMousePressed="#CustomerTableOnClickPressed" prefHeight="660.0" prefWidth="1190.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="CustomersID" prefWidth="90.0" text="Customer ID" />
+                                  <TableColumn fx:id="CustomersType" prefWidth="130.0" text="Customer Type" />
+                                    <TableColumn fx:id="CustomersAdd" text="Address ID" />
+                                    <TableColumn fx:id="CustomersFName" prefWidth="110.0" text="First Name" />
+                                    <TableColumn fx:id="CustomersLName" prefWidth="110.0" text="Last Name" />
+                                    <TableColumn fx:id="CustomersEmail" prefWidth="260.0" text="Email" />
+                                    <TableColumn fx:id="CustomersYear" prefWidth="180.0" text="Register Date" />
+                                    <TableColumn fx:id="CustomersActive" prefWidth="60.0" text="Active" />
+                                    <TableColumn fx:id="CustomersPending" prefWidth="75.0" text="Pending" />
+                                </columns>
+                              </TableView>
+                              <ToolBar layoutY="657.0" prefHeight="70.0" prefWidth="1190.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="627.0">
+                                 <items>
+                                    <TextField fx:id="CustomerRecordID" prefHeight="27.0" prefWidth="120.0" promptText="Customer ID " />
+                                    <Button fx:id="CustomerEdit" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#customerEditOnAction" stylesheets="@stylesheets/ImageButton.css" text="Edit Record - Limited">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WeditNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                 </items>
+                                 <padding>
+                                    <Insets left="100.0" />
+                                 </padding>
+                              </ToolBar>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Rentals">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="661.0" prefWidth="1175.0">
+                           <children>
+                              <TableView fx:id="RentalsTable" prefHeight="660.0" prefWidth="1190.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="RentalsID" prefWidth="100.0" text="Rental ID" />
+                                  <TableColumn fx:id="RentalsDate" prefWidth="200.0" text="Rental Date" />
+                                    <TableColumn fx:id="RentalsFilmID" prefWidth="100.0" text="Film ID" />
+                                    <TableColumn fx:id="RentalsEpID" prefWidth="100.0" text="Series ID" />
+                                    <TableColumn fx:id="RentalsTitle" prefWidth="220.0" text="Title " />
+                                    <TableColumn fx:id="RentalsCustomerID" prefWidth="100.0" text="Customer ID" />
+                                    <TableColumn fx:id="RentalsEmail" prefWidth="260.0" text="Customer Email" />
+                                </columns>
+                              </TableView>
+                              <ToolBar layoutX="1.0" layoutY="657.0" prefHeight="70.0" prefWidth="1190.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="627.0">
+                                 <padding>
+                                    <Insets left="100.0" />
+                                 </padding>
+                                 <items>
+                                    <TextField fx:id="RentalStartingDate" prefWidth="120.0" promptText="Start Date" />
+                                    <TextField fx:id="RentalEndDate" layoutX="10.0" layoutY="32.0" prefWidth="120.0" promptText="End Date" />
+                                    <TextField fx:id="RentalNumber" layoutX="10.0" layoutY="32.0" prefWidth="100.0" promptText="Number" />
+                                    <Button mnemonicParsing="false" onAction="#RentalSalesOnAction" prefWidth="160.0" stylesheets="@stylesheets/DefaultButton.css" text="Highest Grossing" />
+                                    <Label fx:id="RentalErrorLabel" prefHeight="30.0" prefWidth="540.0" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                    </Label>
+                                 </items>
+                              </ToolBar>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Films">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="FilmsTable" onMousePressed="#FilmsTableOnClickPressed" prefHeight="0.0" prefWidth="0.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="FilmsID" prefWidth="100.0" text="Film ID" />
+                                  <TableColumn fx:id="FilmsTitle" prefWidth="200.0" text="Title" />
+                                    <TableColumn fx:id="FilmsDesc" prefWidth="100.0" text="Description" />
+                                    <TableColumn fx:id="FilmsSubs" prefWidth="120.0" text="Subtitles ID" />
+                                    <TableColumn fx:id="FilmsLang" prefWidth="120.0" text="Spoken Lang.  ID" />
+                                    <TableColumn fx:id="FilmsLength" prefWidth="100.0" text="Length" />
+                                    <TableColumn fx:id="FilmsRating" prefWidth="100.0" text="Rating" />
+                                    <TableColumn fx:id="FilmsSP" prefWidth="150.0" text="Sp. Features" />
+                                    <TableColumn fx:id="FilmsYear" prefWidth="100.0" text="Release Year" />
+                                </columns>
+                              </TableView>
+                              <ToolBar layoutX="1.0" layoutY="705.0" prefHeight="70.0" prefWidth="1190.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="627.0">
+                                 <items>
+                                    <TextField fx:id="FilmsTextField" prefHeight="24.0" prefWidth="120.0" promptText="Film ID " />
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#FilmsEditOnAction" stylesheets="@stylesheets/ImageButton.css" text="Edit Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WeditNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#FilmsDelOnAction" stylesheets="@stylesheets/ImageButton.css" text="Delete Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WcancelNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#FilmsNewOnAction" stylesheets="@stylesheets/ImageButton.css" text="New Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WaddNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Label fx:id="FilmsErrorLabel" prefHeight="30.0" prefWidth="460.0" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </items>
+                                 <padding>
+                                    <Insets left="100.0" />
+                                 </padding>
+                              </ToolBar>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Series">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="SeriesTable" onMousePressed="#SeriesTableOnClickPressed" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                    <TableColumn fx:id="SeriesID" prefWidth="100.0" text="Series ID" />
+                                    <TableColumn fx:id="SeriesTitle" prefWidth="250.0" text="Title" />
+                                    <TableColumn fx:id="SeriesDesc" prefWidth="300.0" text="Description" />
+                                    <TableColumn fx:id="SeriesSubs" prefWidth="120.0" text="Subtitles ID" />
+                                    <TableColumn fx:id="SeriesLang" prefWidth="120.0" text="Spoken Lang. ID" />
+                                    <TableColumn fx:id="SeriesRating" prefWidth="100.0" text="Rating" />
+                                    <TableColumn fx:id="SeriesYear" prefWidth="100.0" text="Release Year" />
+                                </columns>
+                              </TableView>
+                              <ToolBar layoutX="1.0" layoutY="705.0" prefHeight="50.0" prefWidth="1190.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="627.0">
+                                 <items>
+                                    <TextField fx:id="SeriesTextField" prefHeight="24.0" prefWidth="120.0" promptText="Series ID " />
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#SeriesEditOnAction" stylesheets="@stylesheets/ImageButton.css" text="Edit Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WeditNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#SeriesDelOnAction" stylesheets="@stylesheets/ImageButton.css" text="Delete Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WcancelNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#SeriesNewOnAction" stylesheets="@stylesheets/ImageButton.css" text="New Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WaddNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Label fx:id="SeriesErrorLabel" prefHeight="30.0" prefWidth="460.0" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </items>
+                                 <padding>
+                                    <Insets left="100.0" />
+                                 </padding>
+                              </ToolBar>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Seasons">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="SeasonsTable" onMousePressed="#SeasonTableOnClickPressed" prefHeight="740.0" prefWidth="1155.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TableColumn fx:id="SeasonsID" prefWidth="150.0" text="Season ID" />
+                                    <TableColumn fx:id="SeasonsSeriesID" prefWidth="150.0" text="Series ID" />
+                                    <TableColumn fx:id="SeasonsTitle" prefWidth="220.0" text="Series Title" />
+                                    <TableColumn fx:id="SeasonsNum" prefWidth="150.0" text="Season Num." />
+                                    <TableColumn fx:id="SeasonsEpNum" prefWidth="150.0" text="Num. of Episodes" />
+                                    <TableColumn fx:id="SeasonsYear" prefWidth="150.0" text="Release Year" />
+                                 </columns>
+                              </TableView>
+                              <ToolBar layoutX="1.0" layoutY="705.0" prefHeight="70.0" prefWidth="1190.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="627.0">
+                                 <items>
+                                    <TextField fx:id="SeasonsTextField" prefHeight="24.0" prefWidth="120.0" promptText="Season ID " />
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#SeasonsEditOnAction" stylesheets="@stylesheets/ImageButton.css" text="Edit Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WeditNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#SeasonsDelOnAction" stylesheets="@stylesheets/ImageButton.css" text="Delete Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WcancelNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#SeasonsNewOnAction" stylesheets="@stylesheets/ImageButton.css" text="New Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WaddNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Label fx:id="SeasonsErrorLabel" prefHeight="30.0" prefWidth="460.0" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </items>
+                                 <padding>
+                                    <Insets left="100.0" />
+                                 </padding>
+                              </ToolBar>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Episodes">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="EpisodesTable" onMousePressed="#EpisodeTableOnClickPressed" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TableColumn fx:id="EpisodesID" prefWidth="120.0" text="Episode ID" />
+                                    <TableColumn fx:id="EpisodesTitle" prefWidth="150.0" text="Title" />
+                                    <TableColumn fx:id="EpisodesNum" prefWidth="120.0" text="Episode Num." />
+                                    <TableColumn fx:id="EpisodesLength" prefWidth="120.0" text="Episode Length" />
+                                    <TableColumn fx:id="EpisodesRating" prefWidth="120.0" text="Rating" />
+                                    <TableColumn fx:id="EpisodesSeasonID" prefWidth="120.0" text="Season ID" />
+                                    <TableColumn fx:id="EpisodesSeriesID" prefWidth="120.0" text="Series ID" />
+                                    <TableColumn fx:id="EpisodesSeriesTitle" prefWidth="181.0" text="Series Title" />
+                                 </columns>
+                              </TableView>
+                              <ToolBar layoutX="1.0" layoutY="705.0" prefHeight="70.0" prefWidth="1190.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="627.0">
+                                 <items>
+                                    <TextField fx:id="EpisodeTextField" prefHeight="24.0" prefWidth="120.0" promptText="Episode ID" />
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#EpisodeEditOnAction" stylesheets="@stylesheets/ImageButton.css" text="Edit Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WeditNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#EpisodeDelOnAction" stylesheets="@stylesheets/ImageButton.css" text="Delete Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WcancelNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#EpisodeNewOnAction" stylesheets="@stylesheets/ImageButton.css" text="New Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WaddNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Label fx:id="EpisodeErrorLabel" prefHeight="30.0" prefWidth="460.0" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </items>
+                                 <padding>
+                                    <Insets left="100.0" />
+                                 </padding>
+                              </ToolBar>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Categories">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="CategoriesTable" onMousePressed="#CatTableOnClickPressed" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="CategoriesID" prefWidth="150.0" text="Category ID" />
+                                  <TableColumn fx:id="CategoriesName" prefWidth="300.0" text="Category Name" />
+                                </columns>
+                              </TableView>
+                              <ToolBar layoutX="1.0" layoutY="705.0" prefHeight="70.0" prefWidth="1190.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="627.0">
+                                 <items>
+                                    <TextField fx:id="CatTextField" prefHeight="24.0" prefWidth="120.0" promptText="Category ID" />
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#CatEditOnAction" stylesheets="@stylesheets/ImageButton.css" text="Edit Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WeditNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#CatDelOnAction" stylesheets="@stylesheets/ImageButton.css" text="Delete Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WcancelNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#CatnewOnAction" stylesheets="@stylesheets/ImageButton.css" text="New Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WaddNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Label fx:id="CatErrorLabel" prefHeight="30.0" prefWidth="460.0" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </items>
+                                 <padding>
+                                    <Insets left="100.0" />
+                                 </padding>
+                              </ToolBar>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Films  &amp; Categories">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="FilmsCatTable" onMousePressed="#FCatTableOnClickPressed" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TableColumn fx:id="FilmsCatFilmID" prefWidth="150.0" text="Film ID" />
+                                    <TableColumn fx:id="FilmsCatFilmTitle" prefWidth="300.0" text="Film Title" />
+                                    <TableColumn fx:id="FilmsCatCatID" prefWidth="150.0" text="Category ID" />
+                                    <TableColumn fx:id="FilmsCatCAtegoryName" prefWidth="200.0" text="Category" />
+                                 </columns>
+                              </TableView>
+                              <ToolBar layoutX="1.0" layoutY="705.0" prefHeight="50.0" prefWidth="1190.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="627.0">
+                                 <items>
+                                    <TextField fx:id="FilmFCatTextField" prefHeight="24.0" prefWidth="120.0" promptText="Film ID" />
+                                    <TextField fx:id="FilmCCatTextField" layoutX="10.0" layoutY="32.0" prefHeight="24.0" prefWidth="120.0" promptText="Category ID" />
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#FCatEditOnAction" stylesheets="@stylesheets/ImageButton.css" text="Edit Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WeditNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#FCatDelOnAction" stylesheets="@stylesheets/ImageButton.css" text="Delete Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WcancelNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#FCatnewOnAction" stylesheets="@stylesheets/ImageButton.css" text="New Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WaddNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Label fx:id="FilmCatErrorLabel" prefHeight="30.0" prefWidth="460.0" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </items>
+                                 <padding>
+                                    <Insets left="100.0" />
+                                 </padding>
+                              </ToolBar>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Series &amp; Categories">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="SeriesCatTable" onMousePressed="#SeriesCatTableOnClickPressed" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TableColumn fx:id="SeriesCatFilmID" prefWidth="150.0" text="Series ID" />
+                                    <TableColumn fx:id="SeriesCatSeriesTitle" prefWidth="300.0" text="Series Title" />
+                                    <TableColumn fx:id="SeriesCatCatID" prefWidth="150.0" text="Category ID" />
+                                    <TableColumn fx:id="SeriesCatCategoryName" prefWidth="200.0" text="Category" />
+                                 </columns>
+                              </TableView>
+                              <ToolBar layoutX="-7.0" layoutY="724.0" prefHeight="70.0" prefWidth="1190.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="627.0">
+                                 <items>
+                                    <TextField fx:id="SeriesSCatTextField" prefHeight="24.0" prefWidth="120.0" promptText="Season ID" />
+                                    <TextField fx:id="SeriesCCatTextField" prefHeight="24.0" prefWidth="120.0" promptText="Category ID" />
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#SCatEditOnAction" stylesheets="@stylesheets/ImageButton.css" text="Edit Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WeditNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#SCatDelOnAction" stylesheets="@stylesheets/ImageButton.css" text="Delete Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WcancelNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#SCatnewOnAction" stylesheets="@stylesheets/ImageButton.css" text="New Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WaddNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Label fx:id="SeriesCatErrorLabel" prefHeight="30.0" prefWidth="460.0" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </items>
+                                 <padding>
+                                    <Insets left="100.0" />
+                                 </padding>
+                              </ToolBar>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Actors">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="ActorTable" onMousePressed="#ActorTableOnClickPressed" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="ActorID" prefWidth="150.0" text="Actor ID" />
+                                  <TableColumn fx:id="ActorFName" prefWidth="300.0" text="First Name" />
+                                    <TableColumn fx:id="ActorLName" prefWidth="300.0" text="Last Name" />
+                                </columns>
+                              </TableView>
+                              <ToolBar layoutX="1.0" layoutY="705.0" prefHeight="70.0" prefWidth="1190.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="627.0">
+                                 <items>
+                                    <TextField fx:id="ActorTextField" prefHeight="24.0" prefWidth="120.0" promptText="Actor ID" />
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#ActorEditOnAction" stylesheets="@stylesheets/ImageButton.css" text="Edit Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WeditNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#ActorDelOnAction" stylesheets="@stylesheets/ImageButton.css" text="Delete Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WcancelNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#ActorNewOnAction" stylesheets="@stylesheets/ImageButton.css" text="New Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WaddNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Label fx:id="ActorErrorLabel" prefHeight="30.0" prefWidth="460.0" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </items>
+                                 <padding>
+                                    <Insets left="100.0" />
+                                 </padding>
+                              </ToolBar>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Actors &amp; Films">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="FilmsActorsTable" onMousePressed="#FilmActorTableOnClickPressed" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TableColumn fx:id="FilmsActorsActorID" prefWidth="150.0" text="Actor ID" />
+                                    <TableColumn fx:id="FilmsActorsActorsName" prefWidth="300.0" text="Actor's Full Name" />
+                                    <TableColumn fx:id="FilmsActorsFilmID" prefWidth="150.0" text="Film ID" />
+                                    <TableColumn fx:id="FilmsActorsFilmTitle" prefWidth="300.0" text="Film Title" />
+                                 </columns>
+                              </TableView>
+                              <ToolBar layoutX="1.0" layoutY="705.0" prefHeight="70.0" prefWidth="1190.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="627.0">
+                                 <items>
+                                    <TextField fx:id="FilmATextField" prefHeight="24.0" prefWidth="120.0" promptText="Actor ID" />
+                                    <TextField fx:id="FilmFTextField" prefHeight="24.0" prefWidth="120.0" promptText="Film ID" />
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#FilmActorEditOnAction" stylesheets="@stylesheets/ImageButton.css" text="Edit Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WeditNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#FilmActorDelOnAction" stylesheets="@stylesheets/ImageButton.css" text="Delete Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WcancelNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#FilmActorNewOnAction" stylesheets="@stylesheets/ImageButton.css" text="New Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WaddNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Label fx:id="FilmActorErrorLabel" prefHeight="30.0" prefWidth="400.0" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </items>
+                                 <padding>
+                                    <Insets left="100.0" />
+                                 </padding>
+                              </ToolBar>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Actors &amp; Series">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="SeriesActorsTable" onMousePressed="#SeriesActorTableOnClickPressed" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TableColumn fx:id="SeriesActorsActorID" prefWidth="120.0" text="Actor ID" />
+                                    <TableColumn fx:id="SeriesActorsActorName" prefWidth="300.0" text="Actor's Full Name" />
+                                    <TableColumn fx:id="SeriesActorsSeasonID" prefWidth="120.0" text="Season ID" />
+                                    <TableColumn fx:id="SeriesActorsSeasonNum" prefWidth="150.0" text="Season Number" />
+                                    <TableColumn fx:id="SeriesActorsSeriesID" prefWidth="120.0" text="Series ID" />
+                                    <TableColumn fx:id="SeriesActorsSeriesTitle" prefWidth="300.0" text="Series Title" />
+                                 </columns>
+                              </TableView>
+                              <ToolBar layoutX="1.0" layoutY="705.0" prefHeight="70.0" prefWidth="1190.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="627.0">
+                                 <items>
+                                    <TextField fx:id="SeriesATextField" prefHeight="24.0" prefWidth="120.0" promptText="Actor ID" />
+                                    <TextField fx:id="SeriesSTextField" layoutX="10.0" layoutY="32.0" prefHeight="24.0" prefWidth="120.0" promptText="Series ID" />
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#SeriesActorEditOnAction" stylesheets="@stylesheets/ImageButton.css" text="Edit Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WeditNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#SeriesActorDelOnAction" stylesheets="@stylesheets/ImageButton.css" text="Delete Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WcancelNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#SeriesActorNewOnAction" stylesheets="@stylesheets/ImageButton.css" text="New Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WaddNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Label fx:id="SeriesActorErrorLabel" prefHeight="30.0" prefWidth="400.0" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </items>
+                                 <padding>
+                                    <Insets left="100.0" />
+                                 </padding>
+                              </ToolBar>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Countries">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="CountriesTable" onMousePressed="#CountryTableOnClickPressed" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="CountriesID" prefWidth="150.0" text="Country ID" />
+                                  <TableColumn fx:id="CountriesName" prefWidth="300.0" text="Country Name" />
+                                </columns>
+                              </TableView>
+                              <ToolBar layoutX="1.0" layoutY="705.0" prefHeight="70.0" prefWidth="1190.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="627.0">
+                                 <items>
+                                    <TextField fx:id="CountryTextField" prefHeight="24.0" prefWidth="120.0" promptText="Country ID" />
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#CountryEditOnAction" stylesheets="@stylesheets/ImageButton.css" text="Edit Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WeditNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#CountryDelOnAction" stylesheets="@stylesheets/ImageButton.css" text="Delete Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WcancelNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#CountryNewOnAction" stylesheets="@stylesheets/ImageButton.css" text="New Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WaddNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Label fx:id="CountryErrorLabel" prefHeight="30.0" prefWidth="460.0" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </items>
+                                 <padding>
+                                    <Insets left="100.0" />
+                                 </padding>
+                              </ToolBar>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Cities">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="CitiesTable" layoutY="8.0" onMousePressed="#CityTableOnClickPressed" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="CitiesID" prefWidth="150.0" text="City ID" />
+                                  <TableColumn fx:id="CitiesName" prefWidth="250.0" text="City Name" />
+                                    <TableColumn fx:id="CitiesCountryID" prefWidth="150.0" text="Country ID" />
+                                    <TableColumn fx:id="CountryName" prefWidth="250.0" text="Country Name" />
+                                </columns>
+                              </TableView>
+                              <ToolBar layoutX="1.0" layoutY="705.0" prefHeight="70.0" prefWidth="1190.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="627.0">
+                                 <items>
+                                    <TextField fx:id="CitiesTextField" prefHeight="24.0" prefWidth="120.0" promptText="City ID" />
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#CitiesEditOnAction" stylesheets="@stylesheets/ImageButton.css" text="Edit Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WeditNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#CitiesDelOnAction" stylesheets="@stylesheets/ImageButton.css" text="Delete Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WcancelNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#CitiesNewOnAction" stylesheets="@stylesheets/ImageButton.css" text="New Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WaddNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Label fx:id="CitiesErrorLabel" prefHeight="30.0" prefWidth="460.0" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </items>
+                                 <padding>
+                                    <Insets left="100.0" />
+                                 </padding>
+                              </ToolBar>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Addresses">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="AddressTable" onMousePressed="#AddressTableOnClickPressed" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                    <TableColumn fx:id="AddressID" prefWidth="100.0" text="Address ID" />
+                                    <TableColumn fx:id="AddressName" prefWidth="200.0" text="Address Name" />
+                                    <TableColumn fx:id="AddressDistrict" prefWidth="200.0" text="District" />
+                                    <TableColumn fx:id="AddressCityID" prefWidth="100.0" text="City ID" />
+                                    <TableColumn fx:id="AddressCityName" prefWidth="200.0" text="City" />
+                                    <TableColumn fx:id="AddressPostal" prefWidth="100.0" text="Postal Code" />
+                                    <TableColumn fx:id="AddressPhone" prefWidth="200.0" text="Phone" />
+                                </columns>
+                              </TableView>
+                              <ToolBar layoutX="1.0" layoutY="705.0" prefHeight="70.0" prefWidth="1190.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="627.0">
+                                 <items>
+                                    <TextField fx:id="AddressTextField" prefHeight="24.0" prefWidth="120.0" promptText="Address ID" />
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#AddressEditOnAction" stylesheets="@stylesheets/ImageButton.css" text="Edit Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WeditNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#AddressDelOnAction" stylesheets="@stylesheets/ImageButton.css" text="Delete Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WcancelNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#AddressNewOnAction" stylesheets="@stylesheets/ImageButton.css" text="New Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WaddNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Label fx:id="AddressErrorLabel" prefHeight="30.0" prefWidth="460.0" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </items>
+                                 <padding>
+                                    <Insets left="100.0" />
+                                 </padding>
+                              </ToolBar>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Language">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="LangsTable" onMousePressed="#LangTableOnClickPressed" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="LangsID" prefWidth="150.0" text="Language ID" />
+                                  <TableColumn fx:id="LangsName" prefWidth="300.0" text="Language Name" />
+                                </columns>
+                              </TableView>
+                              <ToolBar layoutX="1.0" layoutY="673.0" prefHeight="70.0" prefWidth="1190.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="627.0">
+                                 <items>
+                                    <TextField fx:id="LangTextField" prefHeight="24.0" prefWidth="120.0" promptText="Language ID" />
+                                    <Button fx:id="LangEdit" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#langEditOnAction" stylesheets="@stylesheets/ImageButton.css" text="Edit Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WeditNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button fx:id="LangDel" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#langDelOnAction" stylesheets="@stylesheets/ImageButton.css" text="Delete Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WcancelNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Button fx:id="LangNew" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#langNewOnAction" stylesheets="@stylesheets/ImageButton.css" text="New Record">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0">
+                                             <image>
+                                                <Image url="@icons/WaddNote.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic></Button>
+                                    <Label fx:id="LangErrorLabel" prefHeight="30.0" prefWidth="460.0" textFill="WHITE" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </items>
+                                 <padding>
+                                    <Insets left="100.0" />
+                                 </padding>
+                              </ToolBar>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Prices">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="49.0" layoutY="47.0" prefHeight="32.0" prefWidth="330.0" text="Current Price Information :" textFill="WHITE" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="50.0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="32.0" prefWidth="140.0" text="Films (Only)  :" textFill="WHITE" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="150.0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="40.0" layoutY="197.0" prefHeight="32.0" prefWidth="140.0" text="Series (Only) :" textFill="WHITE" AnchorPane.leftAnchor="70.0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="50.0" layoutY="241.0" prefHeight="32.0" prefWidth="140.0" text="Films (Both) :" textFill="WHITE" AnchorPane.leftAnchor="70.0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="40.0" layoutY="291.0" prefHeight="32.0" prefWidth="140.0" text="Series (Both) :" textFill="WHITE" AnchorPane.leftAnchor="70.0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="EmployeeFilmPriceO" layoutX="204.0" layoutY="150.0" prefHeight="32.0" prefWidth="65.0" textFill="WHITE" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="940.0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="EmployeeSeriesPriceO" layoutX="190.0" layoutY="197.0" prefHeight="32.0" prefWidth="55.0" textFill="WHITE" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="940.0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="EmployeeFilmPriceB" layoutX="174.0" layoutY="241.0" prefHeight="32.0" prefWidth="140.0" textFill="WHITE" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="940.0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="EmployeeSeriesPriceB" layoutX="167.0" layoutY="291.0" prefHeight="32.0" prefWidth="140.0" textFill="WHITE" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="940.0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="40.0" endY="54.0" startX="40.0" startY="350.0" stroke="WHITE" strokeWidth="2.0" />
+                              <Line endX="30.0" endY="76.0" layoutX="10.0" layoutY="10.0" startX="335.0" startY="76.0" stroke="WHITE" strokeWidth="2.0" />
+                              <Label layoutX="240.0" layoutY="150.0" prefHeight="32.0" prefWidth="140.0" text="\$" textFill="WHITE" AnchorPane.leftAnchor="240.0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="240.0" layoutY="197.0" prefHeight="32.0" prefWidth="140.0" text="\$" textFill="WHITE" AnchorPane.leftAnchor="240.0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="240.0" layoutY="241.0" prefHeight="32.0" prefWidth="140.0" text="\$" textFill="WHITE" AnchorPane.leftAnchor="240.0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="240.0" layoutY="291.0" prefHeight="32.0" prefWidth="140.0" text="\$" textFill="WHITE" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="291.0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </center>
+         <left>
+            <AnchorPane maxHeight="764.0" prefHeight="764.0" prefWidth="145.0" stylesheets="@stylesheets/ImageButton.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" layoutX="1.0" layoutY="21.0" prefHeight="19.0" prefWidth="165.0" text="Welcome Employee:" textFill="WHITE" AnchorPane.bottomAnchor="725.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="20.0">
+                     <font>
+                        <Font name="Noto Sans Bold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="18.0" fitWidth="18.0">
+                           <image>
+                              <Image url="@icons/download-icon-avatar+person+profile+user+icon-1320086059654790795_256.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <Label fx:id="EmployeeLabelEmail" alignment="CENTER" layoutX="1.0" layoutY="49.0" prefHeight="22.0" prefWidth="150.0" textFill="WHITE" AnchorPane.bottomAnchor="700.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="49.0">
+                     <font>
+                        <Font name="Noto Sans Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Line endX="-36.0" endY="-5.0" layoutX="146.0" layoutY="20.0" startX="-36.0" startY="650.0" stroke="WHITE" strokeWidth="2.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="166.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="20.0" />
+                  <Button fx:id="LogoutButton" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="42.0" layoutY="546.0" mnemonicParsing="false" onAction="#LogoutOnAction" prefHeight="31.0" prefWidth="90.0" text="Logout" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+                     <font>
+                        <Font name="Noto Sans Regular" size="13.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/logout.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="ExitButton" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="40.0" layoutY="620.0" mnemonicParsing="false" onAction="#ExitOnAction" prefHeight="31.0" prefWidth="90.0" text="Exit" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+                     <font>
+                        <Font name="Noto Sans Regular" size="13.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/poweroff.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="RefreshButton" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="42.0" layoutY="487.0" mnemonicParsing="false" onAction="#RefreshOnAction" prefHeight="31.0" prefWidth="90.0" stylesheets="@stylesheets/ImageButton.css" text="Refresh" AnchorPane.bottomAnchor="240.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+                     <font>
+                        <Font name="Noto Sans Regular" size="13.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="45.0">
+                           <image>
+                              <Image url="@icons/refresh.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <ImageView fitHeight="319.0" fitWidth="115.0" layoutX="27.0" layoutY="108.0">
+                     <image>
+                        <Image url="@icons/ApplogoVertical.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </left>
+         <top>
+            <AnchorPane prefHeight="30.0" prefWidth="1340.0" BorderPane.alignment="CENTER" />
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

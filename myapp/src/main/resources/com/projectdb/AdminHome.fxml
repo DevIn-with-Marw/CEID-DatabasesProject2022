@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AdminUIBase" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1280.0" styleClass="bodybg" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projectdb.AdminHomeController">
+   <children>
+      <BorderPane fx:id="AdminUIBorderPane" prefHeight="760.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane fx:id="AdminUI_welcome_pane" maxHeight="-Infinity" minHeight="109.0" prefHeight="109.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="164.0" fitWidth="343.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/Applogo.png" />
+                     </image></ImageView>
+                  <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="1181.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="1181.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="26.0">
+                     <image>
+                        <Image url="@icons/download-icon-avatar+person+profile+user+icon-1320086059654790795_256.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="AdminUI_hellouser_label" alignment="CENTER_RIGHT" layoutX="685.0" layoutY="40.0" prefHeight="24.0" prefWidth="476.0" text="Hello &lt;username&gt;!" textFill="WHITE" AnchorPane.leftAnchor="685.0" AnchorPane.rightAnchor="119.0" AnchorPane.topAnchor="40.0">
+                     <font>
+                        <Font name="Leelawadee Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane fx:id="AdminUI_ButtonGroup1_Pane" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="244.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="AdminUI_LogoutButton" alignment="CENTER" graphicTextGap="8.0" layoutX="10.0" layoutY="388.0" mnemonicParsing="false" onAction="#logout" prefHeight="63.0" prefWidth="172.0" style="-fx-text-alignment: center;" stylesheets="@stylesheets/ImageButton.css" text="Logout" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="199.2">
+                     <graphic>
+                        <ImageView cache="true" cacheHint="QUALITY" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/7787553_sleep_bed_bedroom_furniture_chair_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="HoloLens MDL2 Assets" size="22.0" />
+                     </font>
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Button>
+                  <Button fx:id="AdminUI_ExitButton" alignment="CENTER" graphicTextGap="8.0" layoutX="-3.0" layoutY="467.0" mnemonicParsing="false" onAction="#exit" prefHeight="57.0" prefWidth="170.0" stylesheets="@stylesheets/ImageButton.css" text="Exit" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <graphic>
+                        <ImageView cache="true" cacheHint="QUALITY" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/9104188_turn%20off_turn%20on_power_off_on_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="HoloLens MDL2 Assets" size="22.0" />
+                     </font>
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Button>
+                  <TextField fx:id="AdminUI_StartDate" layoutX="37.0" layoutY="160.0" promptText="Starting Date" AnchorPane.bottomAnchor="465.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="150.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="AdminUI_EndDate" layoutX="32.0" layoutY="200.0" promptText="Ending Date" AnchorPane.bottomAnchor="415.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="200.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="AdminUI_LogIndicationLabel" layoutX="23.0" layoutY="15.0" prefHeight="40.0" prefWidth="184.0" text="Search in Log based on:" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="595.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="37.0" AnchorPane.topAnchor="15.0">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="AdminUI_showLogInfo" alignment="CENTER" graphicTextGap="8.0" layoutX="17.0" layoutY="262.0" mnemonicParsing="false" onAction="#showLogInfo" prefHeight="63.0" prefWidth="189.0" style="-fx-text-alignment: center;" stylesheets="@stylesheets/DefaultButton.css" text="Show Log Info" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="HoloLens MDL2 Assets" size="22.0" />
+                     </font>
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Button>
+                  <ChoiceBox fx:id="AdminUI_TableChoice" layoutX="32.0" layoutY="61.0" prefWidth="150.0" stylesheets="@stylesheets/EmployeeEditTheme.css" AnchorPane.bottomAnchor="554.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="48.0" AnchorPane.topAnchor="61.0" />
+                  <TextField fx:id="AdminUI_EmailForLog" layoutX="34.0" layoutY="108.0" promptText="Email" AnchorPane.bottomAnchor="507.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="108.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane fx:id="AdminUI_main_Pane" prefHeight="600.0" prefWidth="973.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000080" height="524.0" layoutX="-23.0" stroke="BLACK" strokeType="INSIDE" width="1007.0" />
+                  <TabPane fx:id="AdminUI_OuterTabPane" layoutX="-26.0" layoutY="-2.0" prefHeight="600.0" prefWidth="1012.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-26.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                      <Tab fx:id="AdminUI_AccountRegistryTab" text="Account Registry">
+                        <content>
+                          <AnchorPane fx:id="AdminUI_AccountRegistry_Pane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TabPane fx:id="AdminUI_AccountRegistry_TabPane" prefHeight="525.0" prefWidth="1012.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <tabs>
+                                        <Tab fx:id="AdminUI_AccountRegistry_CustomersTab" style="-fx-pref-width: 247.5;" text="Customers">
+                                          <content>
+                                            <AnchorPane fx:id="AdminUI_AccountRegistry_CustomersPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="1012.0">
+                                                   <children>
+                                                      <ScrollPane fx:id="AdminUI_AccountRegistry_CustomersScrollPane" prefHeight="436.0" prefWidth="1012.0" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <content>
+                                                            <TableView fx:id="AdminUI_AccountRegistry_CustomersTable" onMousePressed="#getemailselectionCust" prefHeight="510.4" prefWidth="1282.0">
+                                                              <columns>
+                                                                <TableColumn fx:id="AdminUI_AccountRegistry_Customers_IdCol" prefWidth="75.0" text="ID" />
+                                                                <TableColumn fx:id="AdminUI_AccountRegistry_Customers_TypeCol" prefWidth="150.0" text="TYPE" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Customers_AddressCol" prefWidth="250.0" text="ADDRESS" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Customers_FnameCol" prefWidth="150.0" text="FIRST NAME" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Customers_LnameCol" prefWidth="150.0" text="LAST NAME" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Customers_EmailCol" prefWidth="250.0" text="EMAIL" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Customers_RegDateCol" prefWidth="180.0" text="REGISTER DATE" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Customers_ActiveCol" prefWidth="75.0" text="ACTIVE" />
+                                                              </columns>
+                                                            </TableView>
+                                                         </content>
+                                                      </ScrollPane>
+                                                      <ToolBar fx:id="AdminUI_AccountRegistry_Customers_Toolbar" prefHeight="56.0" prefWidth="1012.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="440.0">
+                                                        <items>
+                                                          <Button fx:id="AdminUI_AccountRegistry_Customers_AddCustomerButton" mnemonicParsing="false" onAction="#addCustomer" prefHeight="61.0" prefWidth="191.0" text="Insert Customer" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                                               <font>
+                                                                  <Font name="HoloLens MDL2 Assets" size="20.0" />
+                                                               </font>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@icons/WaddNote.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </Button>
+                                                            <Button fx:id="AdminUI_AccountRegistry_Customers_RemoveCustomerButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#removeCustomer" prefHeight="61.0" prefWidth="191.0" text="Delete Customer" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                                               <font>
+                                                                  <Font name="HoloLens MDL2 Assets" size="20.0" />
+                                                               </font>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@icons/WcancelNote.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </Button>
+                                                        </items>
+                                                      </ToolBar>
+                                                   </children></AnchorPane>
+                                          </content>
+                                        </Tab>
+                                        <Tab fx:id="AdminUI_AccountRegistry_Employees_Tab" style="-fx-pref-width: 247.5;" text="Employees">
+                                          <content>
+                                            <AnchorPane fx:id="AdminUI_AccountRegistry_EmployeesPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <ScrollPane fx:id="AdminUI_AccountRegistry_EmployeesScrollPane" hbarPolicy="NEVER" prefHeight="510.4" prefWidth="1012.0" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <content>
+                                                            <TableView fx:id="AdminUI_AccountRegistry_EmployeesTable" onMousePressed="#getemailselectionEmpl" prefHeight="510.0" prefWidth="1002.0">
+                                                               <columns>
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Employees_IdCol" prefWidth="75.0" text="ID" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Employees_FnameCol" prefWidth="150.0" text="FIRST NAME" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Employees_LnameCol" prefWidth="150.0" text="LAST NAME" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Employees_EmailCol" prefWidth="250.0" text="EMAIL" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Employees_RegDateCol" prefWidth="150.0" text="REGISTER DATE" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Employees_ActiveCol" prefWidth="75.0" text="ACTIVE" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Employees_PhoneCol" prefWidth="150.0" text="PHONE" />
+                                                               </columns>
+                                                            </TableView>
+                                                         </content>
+                                                      </ScrollPane>
+                                                      <ToolBar fx:id="AdminUI_AccountRegistry_Employees_Toolbar" prefHeight="56.0" prefWidth="1012.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="440.0">
+                                                         <items>
+                                                            <Button fx:id="AdminUI_AccountRegistry_Employees_AddEmployeeButton" mnemonicParsing="false" onAction="#addEmployee" prefHeight="61.0" prefWidth="191.0" text="Insert Employee" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                                               <font>
+                                                                  <Font name="HoloLens MDL2 Assets" size="20.0" />
+                                                               </font>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@icons/WaddNote.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </Button>
+                                                            <Button fx:id="AdminUI_AccountRegistry_Employees_RemoveEmployeeButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#removeEmployee" prefHeight="61.0" prefWidth="191.0" text="Delete Employee" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                                               <font>
+                                                                  <Font name="HoloLens MDL2 Assets" size="20.0" />
+                                                               </font>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@icons/WcancelNote.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </Button>
+                                                            <Button fx:id="AdminUI_AccountRegistry_Employees_MakeAdminButton" layoutX="284.0" layoutY="10.0" mnemonicParsing="false" onAction="#promoteEmployeeToAdmin" prefHeight="61.0" prefWidth="191.0" text="Make Admin" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                                               <font>
+                                                                  <Font name="HoloLens MDL2 Assets" size="20.0" />
+                                                               </font>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@icons/promotion_arrow.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </Button>
+                                                         </items>
+                                                      </ToolBar>
+                                                   </children></AnchorPane>
+                                          </content>
+                                        </Tab>
+                                          <Tab fx:id="AdminUI_AccountRegistry_Admins_Tab" style="-fx-pref-width: 247.5;" text="Admins">
+                                             <content>
+                                                <AnchorPane fx:id="AdminUI_AccountRegistry_AdminsPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <ScrollPane fx:id="AdminUI_AccountRegistry_AdminsScrollPane" prefHeight="510.4" prefWidth="1012.0" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <content>
+                                                            <TableView fx:id="AdminUI_AccountRegistry_AdminsTable" onMousePressed="#getemailselectionAdmin" prefHeight="510.4" prefWidth="985.0">
+                                                               <columns>
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Admins_IdCol" prefWidth="100.0" text="ID" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Admins_FnameCol" prefWidth="150.0" text="FIRST NAME" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Admins_LnameCol" prefWidth="150.0" text="LAST NAME" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Admins_EmailCol" prefWidth="280.0" text="EMAIL" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Admins_RegDateCol" prefWidth="200.0" text="REGISTER DATE" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Admins_ActiveCol" prefWidth="100.0" text="ACTIVE" />
+                                                               </columns>
+                                                            </TableView>
+                                                         </content>
+                                                      </ScrollPane>
+                                                      <ToolBar fx:id="AdminUI_AccountRegistry_Admins_Toolbar" prefHeight="56.0" prefWidth="1012.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="440.0">
+                                                         <items>
+                                                            <Button fx:id="AdminUI_AccountRegistry_Admins_RemoveAdminButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#removeAdmin" prefHeight="61.0" prefWidth="191.0" text="Delete Admin" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                                               <font>
+                                                                  <Font name="HoloLens MDL2 Assets" size="20.0" />
+                                                               </font>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@icons/WcancelNote.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </Button>
+                                                            <Button fx:id="AdminUI_AccountRegistry_Admins_MakeEmployeeButton" layoutX="284.0" layoutY="10.0" mnemonicParsing="false" onAction="#DemoteAdminToEmployee" prefHeight="61.0" prefWidth="191.0" text="Make Employee" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                                               <font>
+                                                                  <Font name="HoloLens MDL2 Assets" size="20.0" />
+                                                               </font>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@icons/demotion_arrow.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </Button>
+                                                         </items>
+                                                      </ToolBar>
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                          </Tab>
+                                          <Tab fx:id="AdminUI_AccountRegistry_RequestsTab" style="-fx-pref-width: 247.5;" text="Pending Requests">
+                                            <content>
+                                              <AnchorPane fx:id="AdminUI_AccountRegistry_RequestsPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <ScrollPane fx:id="AdminUI_AccountRegistry_RequestsScrollPane" prefHeight="510.4" prefWidth="1012.0" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <content>
+                                                            <TableView fx:id="AdminUI_AccountRegistry_RequestsTable" prefHeight="510.4" prefWidth="1282.0">
+                                                               <columns>
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Requests_IdCol" prefWidth="75.0" text="ID" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Requests_TypeCol" prefWidth="150.0" text="TYPE" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Requests_AddressCol" prefWidth="250.0" text="ADDRESS" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Requests_FnameCol" prefWidth="150.0" text="FIRST NAME" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Requests_LnameCol" prefWidth="150.0" text="LAST NAME" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Requests_EmailCol" prefWidth="250.0" text="EMAIL" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Requests_RegDateCol" prefWidth="180.0" text="REGISTER DATE" />
+                                                                  <TableColumn fx:id="AdminUI_AccountRegistry_Requests_ActiveCol" prefWidth="75.0" text="ACTIVE" />
+                                                               </columns>
+                                                            </TableView>
+                                                         </content>
+                                                      </ScrollPane>
+                                                      <ToolBar fx:id="AdminUI_AccountRegistry_Requests_Toolbar" prefHeight="56.0" prefWidth="1012.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="440.0">
+                                                         <items>
+                                                            <Button fx:id="AdminUI_AccountRegistry_Requests_AcceptButton" mnemonicParsing="false" onAction="#AcceptCustomer" prefHeight="61.0" prefWidth="191.0" text="Accept" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                                               <font>
+                                                                  <Font name="HoloLens MDL2 Assets" size="20.0" />
+                                                               </font>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@icons/circle_okay_tick_icon.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </Button>
+                                                            <Button fx:id="AdminUI_AccountRegistry_Requests_DeclineButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#RejectCustomer" prefHeight="61.0" prefWidth="191.0" text="Decline" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                                               <font>
+                                                                  <Font name="HoloLens MDL2 Assets" size="20.0" />
+                                                               </font>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@icons/circled_x_icon.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </Button>
+                                                         </items>
+                                                      </ToolBar>
+                                                   </children></AnchorPane>
+                                            </content>
+                                          </Tab>
+                                      </tabs>
+                                    </TabPane>
+                                    <Label fx:id="AdminUI_AccountRegistry_ErrorIndicationLabel" layoutY="492.0" prefHeight="60.0" prefWidth="399.0" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="600.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="485.0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children></AnchorPane>
+                        </content>
+                           <graphic>
+                              <ImageView cache="true" cacheHint="QUALITY" fitHeight="36.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@icons/3507745_business_card_finance_iconoteka_membership_icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                      </Tab>
+                      <Tab fx:id="AdminUI_IncomeHistoryTab" text="Income History">
+                        <content>
+                          <AnchorPane fx:id="AdminUI_IncomeHistoryPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="AdminUI_IncomeHistoryTable" layoutX="47.0" layoutY="47.0" prefHeight="555.2" prefWidth="1012.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn fx:id="AdminUI_IncomeHistoryTable_MonthCol" prefWidth="200.0" text="MONTH" />
+                                        <TableColumn fx:id="AdminUI_IncomeHistoryTable_TotalIncomeCol" maxWidth="-Infinity" prefWidth="810.0" text="TOTAL INCOME">
+                                             <columns>
+                                                <TableColumn fx:id="AdminUI_IncomeHistoryTable_TotalFilmsIncomeCol" prefWidth="405.0" text="FILMS" />
+                                                <TableColumn fx:id="AdminUI_IncomeHistoryTable_TotalEpisodesIncomeCol" prefWidth="405.0" text="EPISODES" />
+                                             </columns>
+                                          </TableColumn>
+                                      </columns>
+                                    </TableView>
+                                 </children></AnchorPane>
+                        </content>
+                           <graphic>
+                              <ImageView cache="true" cacheHint="QUALITY" fitHeight="31.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@icons/chart.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                      </Tab>
+                        <Tab fx:id="AdminUI_PricingListTab" text="Pricing List">
+                          <content>
+                            <AnchorPane fx:id="AdminUI_PricingListPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="AdminUI_PricingList_IntroLabel" layoutX="85.0" layoutY="44.0" text="These are the current prices for both films and episodes according to customer categories:" textFill="WHITE" AnchorPane.bottomAnchor="500.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="AdminUI_PricingList_FilmsOnlyLabel" layoutX="40.0" layoutY="54.0" prefHeight="47.0" prefWidth="133.0" text="FILMS ONLY:" textFill="WHITE" underline="true" AnchorPane.bottomAnchor="454.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="839.0" AnchorPane.topAnchor="54.0">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="AdminUI_PricingList_SeriesOnlyLabel" layoutX="40.0" layoutY="106.0" prefHeight="47.0" prefWidth="133.0" text="SERIES ONLY:" textFill="WHITE" underline="true" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="839.0">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="AdminUI_PricingList_FilmsSeriesLabel" layoutX="40.0" layoutY="160.0" prefHeight="47.0" prefWidth="273.0" text="FILMS AND SERIES (FILMS):" textFill="WHITE" underline="true" AnchorPane.bottomAnchor="348.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="700.0" AnchorPane.topAnchor="160.0">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="AdminUI_PricingList_SeriesFilmsLabel" layoutX="40.0" layoutY="211.0" prefHeight="47.0" prefWidth="273.0" text="FILMS AND SERIES (SERIES):" textFill="WHITE" underline="true" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="700.0">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="AdminUI_PricingList_FilmsOnlyPrice" alignment="CENTER" layoutX="187.0" layoutY="56.0" onAction="#setFonlyPrice" prefHeight="32.0" prefWidth="79.0" text="0.4 " AnchorPane.bottomAnchor="455.20000000000005" AnchorPane.leftAnchor="187.0" AnchorPane.rightAnchor="745.8" AnchorPane.topAnchor="56.0">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="AdminUI_PricingList_SeriesOnlyPrice" alignment="CENTER" layoutX="187.0" layoutY="111.0" onAction="#setSonlyPrice" prefHeight="44.0" prefWidth="79.0" text="0.2 " AnchorPane.bottomAnchor="400.20000000000005" AnchorPane.leftAnchor="187.0" AnchorPane.rightAnchor="745.8" AnchorPane.topAnchor="111.0">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="AdminUI_PricingList_FilmsSeriesPrice" alignment="CENTER" layoutX="320.0" layoutY="165.0" onAction="#setFSPrice" prefHeight="44.0" prefWidth="79.0" text="0.3 " AnchorPane.bottomAnchor="346.20000000000005" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="612.8" AnchorPane.topAnchor="165.0">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="AdminUI_PricingList_SeriesFilmsPrice" alignment="CENTER" layoutX="320.0" layoutY="215.0" onAction="#setSFPrice" prefHeight="44.0" prefWidth="79.0" text="0.1 " AnchorPane.bottomAnchor="296.20000000000005" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="612.8" AnchorPane.topAnchor="215.0">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label fx:id="AdminUI_PricingList_ErrorIndicationLabel" layoutX="56.0" layoutY="394.0" textFill="WHITE" AnchorPane.bottomAnchor="116.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="394.0">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="270.0" layoutY="60.0" text="€" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="270.0" layoutY="114.0" text="€" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="391.0" layoutY="168.0" text="€" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="392.0" layoutY="219.0" text="€" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children></AnchorPane>
+                          </content>
+                           <graphic>
+                              <ImageView cache="true" cacheHint="QUALITY" fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@icons/172506_money_icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="50.0" right="50.0" />
+               </BorderPane.margin>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+   <stylesheets>
+      <URL value="@stylesheets/AdminHomeTheme.css" />
+      <URL value="@stylesheets/DefaultButton.css" />
+   </stylesheets>
+</AnchorPane>

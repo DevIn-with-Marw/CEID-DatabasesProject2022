@@ -1,0 +1,5 @@
+.txtfield {
+    -fx-background-color: transparent;
+    -fx-border-color: ba1a2a;
+    -fx-text-fill: red;
+}

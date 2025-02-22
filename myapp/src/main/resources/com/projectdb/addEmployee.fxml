@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="500.0" styleClass="bodybg" stylesheets="@stylesheets/EmployeeEditTheme.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projectdb.AdminAddEmployeeController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <AnchorPane prefHeight="590.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="AdminUI_AddEmp_SubmitButton" contentDisplay="RIGHT" graphicTextGap="8.0" layoutX="282.0" layoutY="625.0" mnemonicParsing="false" onAction="#confirmEmployee" prefHeight="60.0" prefWidth="173.0" stylesheets="@stylesheets/ImageButton.css" text="CONFIRM" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="282.0" AnchorPane.rightAnchor="45.0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@icons/RrightArrow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <TextField fx:id="AdminUI_AddEmp_id" layoutX="45.0" layoutY="100.0" promptText="Employee Id" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="100.0" />
+                  <TextField fx:id="AdminUI_AddEmp_phone" layoutX="45.0" layoutY="130.0" promptText="Phone" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="130.0" />
+                  <TextField fx:id="AdminUI_AddEmp_fname" layoutX="45.0" layoutY="190.0" promptText="First Name*" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="190.0" />
+                  <TextField fx:id="AdminUI_AddEmp_lname" layoutX="45.0" layoutY="219.0" promptText="Last Name*" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="219.0" />
+                  <TextField fx:id="AdminUI_AddEmp_regdate" layoutX="45.0" layoutY="250.0" promptText="Register Date" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="250.0" />
+                  <TextField fx:id="AdminUI_AddEmp_activity" layoutX="45.0" layoutY="280.0" promptText="Active (0 or 1: any other value is considered as 1)" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="280.0" />
+                  <Button fx:id="AdminUI_AddEmp_CancelButton" graphicTextGap="8.0" layoutX="45.0" layoutY="625.0" mnemonicParsing="false" onAction="#cancel" prefHeight="60.0" prefWidth="166.0" stylesheets="@stylesheets/ImageButton.css" text="CANCEL" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="289.0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@icons/RleftArrow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <TextField fx:id="AdminUI_AddEmp_email" layoutX="55.0" layoutY="159.0" prefHeight="26.0" prefWidth="403.0" promptText="Email*" AnchorPane.bottomAnchor="554.6" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="159.0" />
+                  <Label fx:id="AdminUI_AddEmp_ErrorReportLabel" layoutX="45.0" layoutY="350.0" text="1" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="350.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="350.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="AdminUI_AddEmp_IndicationLabel" layoutX="55.0" layoutY="240.0" text="Please fill in the following fields ( * : necessary field)" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="660.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="40.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="AdminUI_AddEmp_ErrorReportLabel2" layoutX="45.0" layoutY="390.0" text="2" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="310.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="390.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="AdminUI_AddEmp_ErrorReportLabel3" layoutX="45.0" layoutY="430.0" text="2" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="270.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="430.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="AdminUI_AddEmp_ErrorReportLabel4" layoutX="45.0" layoutY="470.0" prefHeight="20.0" prefWidth="210.0" text="2" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="230.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="470.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="AdminUI_AddEmp_ErrorReportLabel5" layoutX="45.0" layoutY="510.0" prefHeight="20.0" prefWidth="218.0" text="2" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="190.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="510.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

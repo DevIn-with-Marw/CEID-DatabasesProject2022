@@ -1,0 +1,2 @@
+main artifact.id = myapp
+package_name = com.projectdb
