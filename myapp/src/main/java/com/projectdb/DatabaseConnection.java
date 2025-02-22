@@ -8,9 +8,9 @@ public class DatabaseConnection {
     public Connection databaseLink;
 
     public Connection getConnection(){
-        String databaseName = "project2022_final";
-        String databaseUser = "root";
-        String databasePassword = "maria";
+        String databaseName = "dbname";
+        String databaseUser = "user";
+        String databasePassword = "password";
         
         try {
             databaseLink = DriverManager.getConnection("jdbc:mariadb://localhost:3306/" + databaseName + "?user=" + databaseUser + "&password=" + databasePassword);
